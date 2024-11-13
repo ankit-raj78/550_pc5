@@ -52,3 +52,4 @@ Checkpoint 5 extends our simple, single-cycle 32-bit processor to support J-type
 ## Conclusion
 This project successfully integrates a variety of instructions and control flows in a modular processor design. Checkpoint 5 adds the functionality for J-type instructions, completing the necessary control logic and datapath elements to support complex program execution with jumps and branches.
 """
+ ![Alt text](https://github.com/ankit-raj78/550_pc5/blob/main/pc5_diagram.jpg)
