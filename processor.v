@@ -102,7 +102,6 @@ module processor(
 	 
 	 CSA_32 csa1(.a(p_counter[31:0]), .b(32'b1), .cin(1'b0), .sum(s_out[31:0]), .cout(out1)); //PC=PC+1
 	 
-	// pc_ins pc1(.q(p_counter[31:0]), .d(s_out[31:0]), .clk(clock), .en(1'b1), .clr(reset));
 	 pc_ins pc1(.q(p_counter[31:0]), .d(final), .clk(clock), .en(1'b1), .clr(reset));
 	 
 	 assign address_imem = p_counter[11:0];
@@ -129,12 +128,10 @@ module processor(
 	 wire[31:0] ovf_status,mux1_out, mux2_out;
 	 wire [31:0] rwd_mux;
 	 
-	// assign ALUop = q_imem[6:2];
 	 assign opcode = q_imem[31:27];
 	 assign Rs = q_imem[21:17];
 	 assign Rt = q_imem[16:12];
 	 assign Rd = q_imem[26:22];
-	// assign shamt = q_imem[11:7];
 	 assign imm = q_imem[16:0];
 	 
 	 //control signals
@@ -152,7 +149,6 @@ module processor(
 	
 	 assign ctrl_writeReg = jal ? 5'b11111 : (((add | sub | addi) & overflow) | setx) ? 5'b11110 : Rd;
   
-	// wire[31:0] extend_imm;
 	 assign extend_imm[31:17] = {15{imm[16]}};
 	 assign extend_imm[16:0] = imm;
 	 
@@ -167,7 +163,6 @@ module processor(
 	assign address_dmem = alu_out[11:0];
  
 	
-	//assign data_writeReg = ((add | sub | addi) & overflow) ? ovf_status : (Rwd ? q_dmem : alu_out);
 	  assign data_writeReg = setx ? Target : (jal ? s_out : (((add | sub | addi) & overflow) ? ovf_status : (Rwd ? q_dmem : alu_out)));
  
 endmodule
