@@ -41,7 +41,7 @@ module control_unit(opcode, Rdst, ALUinB, Rwe, Rwd, DMwe, all_Rtype, ALUop, addi
 	and and_blt(blt, not_o4, not_o3, opcode[2], opcode[1], not_o0);
 	
 	and and_setx(setx, opcode[4], not_o3, opcode[2], not_o1, opcode[0]);
-	
+// Determine destination register select signal (Rdst) based on instruction type
 	assign Rdst = sw | jr | bne | blt;
 
 	and and_add(add,not_ALUop4, not_ALUop3, not_ALUop2, not_ALUop1, not_ALUop0);
