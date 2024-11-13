@@ -44,7 +44,6 @@ Checkpoint 5 extends our simple, single-cycle 32-bit processor to support J-type
 
 - **Modularity**: Each core functionality is encapsulated in its own module, promoting reusability and clarity.
 - **Clock Management**: Custom clock dividers ensure that different parts of the processor operate at the correct frequencies derived from the primary 50 MHz clock.
-- **Separate Instruction and Data Memory**: Allows for parallel access, improving instruction throughput and data handling efficiency.
 - **Exception Handling**: Overflow detection and status updates in `$r30` enable handling exceptions during arithmetic operations. The `setx` and `bex` instructions enhance exception handling and control flow based on `$rstatus`.
 
 ## Project Setup
