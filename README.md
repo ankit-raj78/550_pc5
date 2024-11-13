@@ -47,9 +47,7 @@ Checkpoint 5 extends our simple, single-cycle 32-bit processor to support J-type
 - **Exception Handling**: Overflow detection and status updates in `$r30` enable handling exceptions during arithmetic operations. The `setx` and `bex` instructions enhance exception handling and control flow based on `$rstatus`.
 
 ## Project Setup
-1. **Clock**: Ensure the design operates at a 50 MHz clock, with clock dividers as needed.
-2. **Reset Behavior**: All registers should reset to zero, and the PC starts at address 0.
-3. **Submission**: Include all Verilog files in a `.zip` file along with this README.
+ **Clock**: Ensure the design operates at a 50 MHz clock, with clock dividers as needed.
 
 ## Conclusion
 This project successfully integrates a variety of instructions and control flows in a modular processor design. Checkpoint 5 adds the functionality for J-type instructions, completing the necessary control logic and datapath elements to support complex program execution with jumps and branches.
